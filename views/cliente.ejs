@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1> <%= title  %></h1>
+    <p>Preencha os campos abaixo para cadastrar um cliente!</p>
+
+    <form action="/new" method="POST">
+        <fieldset>
+            <legend>Dados Cadastrais</legend>
+            <p>Nome: <input type="text" name="nome"  value="<%= clientes.nome %>"></p>
+            <p>Idade: <input type="number" name="idade" value="<%= clientes.idade %>"></p>
+            <p>Cidade: <input type="text" name="cidade" value="<%= clientes.cidade %>"></p>
+            <input type="hidden"  name="id" value="<%= clientes._id %>">
+            <p>
+                <input type="submit" value="Salvar">
+                <a href="/">Cancelar</a>
+            </p>
+        </fieldset>
+    </form>
+    
+</body>
+</html>
